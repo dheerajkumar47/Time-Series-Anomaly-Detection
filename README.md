@@ -1,5 +1,6 @@
 
-📊 Time-Series Anomaly Detection System
+**📊 Time-Series Anomaly Detection System**
+
 A powerful and user-friendly web application for detecting anomalies in time-series data. This system provides an intuitive dashboard for data loading, model configuration, and performance analysis, allowing users to identify unusual patterns in various datasets, from financial transactions to server metrics.
 
 ✨ Features
@@ -29,7 +30,7 @@ This project is built with Python and Streamlit. Follow these simple steps to ge
 Step 1: Clone the Repository
 Bash
 
-git clone 
+git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git)
 cd your-repository-name
 (Replace with your actual GitHub repository URL and folder name)
 
@@ -79,8 +80,6 @@ Isolation Forest: A versatile and robust anomaly detection algorithm that works 
 🤝 Contributing
 Contributions are welcome! If you have suggestions for new features or find a bug, please open an issue or submit a pull request.
 
-📝 License
-This project is licensed under the [Your Chosen License] License. See the LICENSE file for details.
 
 🙏 Acknowledgements
 A special thanks to the creators of the Prophet, dtaianomaly, and Streamlit libraries for providing the powerful tools that made this project possible.
