@@ -1,0 +1,13 @@
+
+streamlit>=1.29.0          # Interactive web dashboard
+pandas>=2.1.4             # Data manipulation (core for time-series)
+numpy>=1.26.0             # Numerical computations
+matplotlib>=3.8.2         # Basic plotting (used by Prophet)
+seaborn>=0.13.0           # Enhanced statistical visualization
+plotly>=5.18.0            # Interactive time-series and anomaly score charts
+scikit-learn>=1.3.2       # Isolation Forest, preprocessing, evaluation
+prophet>=1.1.5            # Time-series forecasting with seasonality
+pyod>=1.0.10              # Optional: Additional anomaly detection algorithms
+scipy>=1.13.0             # Scientific computing (dependency for scikit-learn/Prophet)
+psutil>=5.9.5             # Memory/runtime profiling (for ModelProfiler)
+DateTime==5.5
