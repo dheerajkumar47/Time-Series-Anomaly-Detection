@@ -1,85 +1,133 @@
 
-**📊 Time-Series Anomaly Detection System**
+# 📊 Time-Series Anomaly Detection System
 
-A powerful and user-friendly web application for detecting anomalies in time-series data. This system provides an intuitive dashboard for data loading, model configuration, and performance analysis, allowing users to identify unusual patterns in various datasets, from financial transactions to server metrics.
+A user-friendly **web application** for detecting anomalies in time-series data.
+It provides an **interactive dashboard** to load data, configure models, visualize anomalies, and analyze performance.
+This system is designed for **students, researchers, and engineers** who need to identify unusual behavior in financial transactions, server metrics, sensor data, or custom datasets.
 
-✨ Features
-📈 Interactive Dashboard: A comprehensive Streamlit dashboard for a seamless user experience.
+---
 
+## 🎯 Purpose & Motivation
 
-📂 Flexible Data Loading: Easily upload your own CSV files or generate synthetic datasets with customizable parameters.
+* **Why this project?**
+  Time-series data is everywhere: stock prices, server CPU usage, IoT sensors, health monitoring. Detecting anomalies is crucial for spotting fraud, preventing system failures, and ensuring data integrity.
 
+* **The problem:** Traditional anomaly detection methods are either too rigid or too complex for quick prototyping.
 
-🤖 Multiple Model Support: Compare the performance of specialized anomaly detection algorithms like Prophet (for trend-based anomalies) and Isolation Forest (a versatile generalist model).
+* **Our solution:** An **intuitive Streamlit-based app** that combines **forecasting (Prophet)** and **machine learning (Isolation Forest)** in a single dashboard, making anomaly detection **accessible, explainable, and interactive.**
 
+---
 
+## ✨ Features
 
-✂️ Dynamic Data Splitting: Automatically or manually split your dataset into training and testing sets based on a user-defined proportion.
+✅ **Interactive Dashboard** – Built with Streamlit for smooth exploration.
+✅ **Flexible Data Input** – Upload CSV datasets or generate synthetic time-series data.
+✅ **Multiple Models** – Prophet (trend-based) + Isolation Forest (outlier-based).
+✅ **Dynamic Train/Test Splitting** – Auto/manual splitting with adjustable ratios.
+✅ **Real-Time Visualizations** – Plot original series, detected anomalies, and scores.
+✅ **Performance Metrics** – Precision, Recall, F1, Accuracy, ROC-AUC.
+✅ **Profiling Tools** – Compare models on training time, prediction time, memory usage.
+✅ **Export Options** – Download predictions, metrics, and profiling results in CSV format.
 
+---
 
-📊 Real-Time Visualization: View original data, predicted anomalies, and model performance metrics through interactive plots.
+## 🚀 Getting Started
 
+### 1️⃣ Clone the Repository
 
+```bash
+git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git
+cd Time-Series-Anomaly-Detection
+```
 
-⏱️ Performance Profiling: Analyze and compare model performance with metrics like training time, prediction time, and memory consumption.
+### 2️⃣ Create & Activate Virtual Environment
 
+```bash
+# Create venv
+python -m venv .venv
 
-🚀 How to Run the Application
-This project is built with Python and Streamlit. Follow these simple steps to get the application running on your local machine.
+# Activate (Windows)
+.venv\Scripts\activate
 
-Step 1: Clone the Repository
-Bash
+# Activate (Mac/Linux)
+source .venv/bin/activate
+```
 
-git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git)
-cd your-repository-name
-(Replace with your actual GitHub repository URL and folder name)
+### 3️⃣ Install Dependencies
 
-Step 2: Set Up a Virtual Environment (Recommended)
-It's a best practice to use a virtual environment to manage project dependencies.
-
-Bash
-
-python -m venv venv
-# On Windows
-venv\Scripts\activate
-# On macOS/Linux
-source venv/bin/activate
-Step 3: Install Dependencies
-Install all the required libraries using the 
-
-requirements.txt file.
-
-Bash
-
+```bash
 pip install -r requirements.txt
-Step 4: Run the App
-Launch the Streamlit dashboard from your terminal.
+```
 
-Bash
+### 4️⃣ Run the Application
 
+```bash
 streamlit run app.py
-Your default web browser should open automatically with the application running.
+```
 
-📂 Project Structure
-├── app.py                     # Main Streamlit application file
-├── data_generator.py          # Module for generating synthetic time-series data
-├── anomaly_detectors.py       # Contains the anomaly detection models (Prophet, Isolation Forest) and profiler
-├── utils.py                   # Utility functions for data preprocessing and visualization
-├── requirements.txt           # List of project dependencies
-└── README.md                  # This file
-💡 Core Concepts & Models
-This project utilizes a specialized approach to time-series anomaly detection by focusing on domain-specific frameworks.
+Your default browser will open the dashboard automatically. 🎉
 
+---
 
-Prophet: A forecasting tool developed by Facebook, it excels at modeling time-series data with strong seasonal components and trends. It's used as a baseline model in this project to quickly identify anomalies based on deviations from predicted forecasts.
+## 📂 Project Structure
 
+```
+├── app.py                  # Main Streamlit app (UI + workflow)
+├── data_generator.py       # Synthetic data generation (financial, server, sensor)
+├── anomaly_detectors.py    # Prophet & Isolation Forest + profiling/evaluation
+├── utils.py                # Data preprocessing & visualization utilities
+├── requirements.txt        # Python dependencies
+└── README.md               # Documentation (this file)
+```
 
-Isolation Forest: A versatile and robust anomaly detection algorithm that works by building a forest of random isolation trees. It's highly effective at identifying outliers by isolating them from the rest of the data.
+---
 
-📸 Demo
-🤝 Contributing
-Contributions are welcome! If you have suggestions for new features or find a bug, please open an issue or submit a pull request.
+## 💡 Core Concepts & Models
 
+### 🔹 Prophet
 
-🙏 Acknowledgements
-A special thanks to the creators of the Prophet, dtaianomaly, and Streamlit libraries for providing the powerful tools that made this project possible.
+* Developed by Facebook for forecasting.
+* Captures **trends + seasonality** in time-series.
+* Used as a **baseline** to detect anomalies as deviations from predicted values.
+
+### 🔹 Isolation Forest
+
+* Tree-based machine learning algorithm for outlier detection.
+* Works by **isolating rare points** in fewer random splits.
+* Great for **non-seasonal, high-dimensional anomaly detection.**
+
+---
+
+## 📸 Demo (Optional)
+
+You can add screenshots/gifs here:
+
+* Dashboard home
+* Synthetic data generation
+* Prophet vs Isolation Forest results
+* Metrics comparison
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! 🚀
+
+* Open an **issue** for bug reports or feature requests.
+* Submit a **pull request** to improve the project.
+
+---
+
+## 🙏 Acknowledgements
+
+* [Streamlit](https://streamlit.io/) – for building interactive apps.
+* [Prophet](https://facebook.github.io/prophet/) – for time-series forecasting.
+* [scikit-learn](https://scikit-learn.org/) – for Isolation Forest and metrics.
+* [Plotly](https://plotly.com/python/) – for interactive visualizations.
+
+---
+
+👉 This project was built to make **time-series anomaly detection practical and explainable**, bridging the gap between research and real-world applications.
+
+---
+
