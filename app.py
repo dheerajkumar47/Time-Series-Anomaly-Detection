@@ -1,3 +1,6 @@
+# Copyright (c) 2025 Dheeraj Kumar
+# Licensed under the MIT License. See LICENSE file for details.
+
 import streamlit as st
 import pandas as pd
 import numpy as np

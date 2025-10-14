@@ -1,4 +1,7 @@
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+![Author: Dheeraj Kumar](https://img.shields.io/badge/Author-Dheeraj_Kumar-blue.svg)
+
 **📊 Time-Series Anomaly Detection System**
 
 A powerful and user-friendly web application for detecting anomalies in time-series data. This system provides an intuitive dashboard for data loading, model configuration, and performance analysis, allowing users to identify unusual patterns in various datasets, from financial transactions to server metrics.
@@ -83,3 +86,7 @@ Contributions are welcome! If you have suggestions for new features or find a bu
 
 🙏 Acknowledgements
 A special thanks to the creators of the Prophet, dtaianomaly, and Streamlit libraries for providing the powerful tools that made this project possible.
+
+## License and Attribution
+This repository is developed and maintained by **Dheeraj Kumar**.  
+Licensed under the [MIT License](./LICENSE). Please give proper credit if you use or modify this project.
