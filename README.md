@@ -121,7 +121,9 @@ Identifies points that are isolated from the rest of the dataset
 Works well on non-periodic or high-dimensional data
 
 📸 Demo Screenshots
-<img width="1920" height="1403" alt="screencapture-time-series-anomaly-detection-6sdvf5vvcvzngp2fj48nvv-streamlit-app-2025-10-16-01_02_49" src="https://github.com/user-attachments/assets/a8069819-7387-4f00-81f4-52f3fcf7005b" /> <img width="1920" height="3550" alt="screencapture-time-series-anomaly-detection-6sdvf5vvcvzngp2fj48nvv-streamlit-app-2025-10-16-01_03_29" src="https://github.com/user-attachments/assets/dc282184-6d7d-41a1-87f1-0d08edb06d76" />
+!(images/1.png)
+!(images/2.png)
+
 🧪 Evaluation Metrics
 The app automatically calculates:
 
