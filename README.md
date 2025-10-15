@@ -15,22 +15,20 @@
 ---
 
 ## 🧠 Overview  
-
 This project is a **Streamlit-based AI system** designed to **detect anomalies in time-series datasets** using **Prophet (forecasting)** and **Isolation Forest (machine learning)**.  
 
 It offers an **intuitive, no-code web dashboard** where users can:
-- Upload or generate data,  
-- Apply multiple models,  
-- Visualize anomalies in real time,  
-- Compare performance metrics, and  
-- Export detailed analysis results.  
+- Upload or generate data  
+- Apply multiple models  
+- Visualize anomalies in real time  
+- Compare performance metrics  
+- Export detailed analysis results  
 
-The system is ideal for **researchers, students, and engineers** working in areas like **finance, IoT, network security, and predictive analytics**.  
+Ideal for **researchers, students, and engineers** working in **finance, IoT, cybersecurity, or predictive analytics**.
 
 ---
 
 ## 🎯 Motivation  
-
 Every dataset tells a story — but sometimes, the anomalies are the most important parts.  
 
 From **financial frauds** and **server failures** to **sensor faults** and **health monitoring**, anomalies can reveal early signs of problems.  
@@ -41,22 +39,20 @@ This project aims to **simplify anomaly detection** — combining **forecasting 
 ---
 
 ## ✨ Key Features  
-
-✅ **Streamlit-Powered Interactive UI** – Real-time results, no coding needed.  
-✅ **Multiple Model Support** – Prophet (trend-based) + Isolation Forest (statistical outlier).  
-✅ **Synthetic Data Generator** – Create time-series for testing or benchmarking.  
-✅ **Flexible Input Options** – Upload CSV datasets or use demo data.  
-✅ **Dynamic Train/Test Splitting** – Manual or automatic ratio adjustment.  
-✅ **Advanced Metrics Dashboard** – Accuracy, Precision, Recall, F1, ROC-AUC.  
-✅ **Performance Comparison** – See which model performs better and faster.  
-✅ **Plotly Visualizations** – Clean, zoomable, and interactive anomaly charts.  
-✅ **Exportable Results** – Save predictions and metrics for academic reporting.  
-✅ **Research-Ready Code** – Modular structure for customization and paper replication.  
+✅ **Streamlit-Powered Interactive UI** – Real-time results, no coding needed  
+✅ **Multiple Model Support** – Prophet (trend-based) + Isolation Forest (statistical outlier)  
+✅ **Synthetic Data Generator** – Create datasets for benchmarking  
+✅ **Flexible Input Options** – Upload CSV datasets or use demo data  
+✅ **Dynamic Train/Test Splitting** – Manual or automatic ratio adjustment  
+✅ **Advanced Metrics Dashboard** – Accuracy, Precision, Recall, F1, ROC-AUC  
+✅ **Performance Comparison** – See which model performs better and faster  
+✅ **Plotly Visualizations** – Clean, zoomable anomaly charts  
+✅ **Exportable Results** – Save outputs for academic or industrial use  
+✅ **Research-Ready Code** – Modular design for easy extension  
 
 ---
 
 ## 🧩 Tech Stack  
-
 | Category | Technology |
 |-----------|-------------|
 | **Frontend / UI** | Streamlit |
@@ -105,26 +101,18 @@ Copy code
 └── README.md               # Documentation (this file)
 🧮 Core Models
 🔹 Prophet
-Developed by Meta (Facebook)
-
-Forecasts trends + seasonality using additive models
-
-Detects anomalies by comparing predicted vs. actual values
-
-Ideal for business, environmental, and sensor data
+Developed by Meta (Facebook).
+Forecasts trends and seasonality using additive models.
+Detects anomalies by comparing predicted vs. actual values.
+Ideal for business, environmental, and sensor data.
 
 🔹 Isolation Forest
-Tree-based unsupervised algorithm for outlier detection
-
-Identifies points that are isolated from the rest of the dataset
-
-Works well on non-periodic or high-dimensional data
+Tree-based unsupervised algorithm for outlier detection.
+Identifies points that are isolated from the rest of the dataset.
+Works well on non-periodic or high-dimensional data.
 
 📸 Demo Screenshots
-![Screenshot 1](images/1.png)
-![Screenshot 2](images/2.png)
-
-
+<p align="center"> <img src="images/1.png" width="45%" /> <img src="images/2.png" width="45%" /> </p>
 🧪 Evaluation Metrics
 The app automatically calculates:
 
@@ -179,7 +167,7 @@ Licensed under the MIT License.
 
 💬 About the Developer
 I’m Dheeraj Kumar — a Software Engineering graduate passionate about AI, ML, and research-driven software systems.
-This project represents my goal to combine academic learning with real-world AI applications, creating tools that are not just smart but understandable and usable.
+This project represents my goal to merge academic learning with real-world AI applications — creating tools that are not just smart, but understandable and usable.
 
 📫 Contact:
 
@@ -202,4 +190,7 @@ Plotly
 
 ⭐ If you find this project helpful, please give it a star on GitHub — it motivates and supports future open-source research!
 
+yaml
+Copy code
 
+---
