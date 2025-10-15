@@ -121,8 +121,9 @@ Identifies points that are isolated from the rest of the dataset
 Works well on non-periodic or high-dimensional data
 
 📸 Demo Screenshots
-!(images/1.png)
-!(images/2.png)
+![Screenshot 1](images/1.png)
+![Screenshot 2](images/2.png)
+
 
 🧪 Evaluation Metrics
 The app automatically calculates:
