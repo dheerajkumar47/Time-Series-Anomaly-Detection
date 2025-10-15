@@ -17,38 +17,26 @@
 ## 🧠 Overview  
 This project is a **Streamlit-based AI system** designed to **detect anomalies in time-series datasets** using **Prophet (forecasting)** and **Isolation Forest (machine learning)**.  
 
-It offers an **intuitive, no-code web dashboard** where users can:
-- Upload or generate data  
-- Apply multiple models  
-- Visualize anomalies in real time  
-- Compare performance metrics  
-- Export detailed analysis results  
+It provides a **no-code web dashboard** where users can:  
+- Upload or generate datasets  
+- Train and compare models  
+- Visualize anomalies interactively  
+- Export performance reports  
 
-Ideal for **researchers, students, and engineers** working in **finance, IoT, cybersecurity, or predictive analytics**.
-
----
-
-## 🎯 Motivation  
-Every dataset tells a story — but sometimes, the anomalies are the most important parts.  
-
-From **financial frauds** and **server failures** to **sensor faults** and **health monitoring**, anomalies can reveal early signs of problems.  
-However, most existing tools are either too rigid, require heavy coding, or lack visual explainability.  
-
-This project aims to **simplify anomaly detection** — combining **forecasting + machine learning** into one interactive platform.
+Built for **researchers, students, and engineers** exploring anomaly detection in **finance, IoT, and system monitoring**.  
 
 ---
 
 ## ✨ Key Features  
-✅ **Streamlit-Powered Interactive UI** – Real-time results, no coding needed  
-✅ **Multiple Model Support** – Prophet (trend-based) + Isolation Forest (statistical outlier)  
-✅ **Synthetic Data Generator** – Create datasets for benchmarking  
-✅ **Flexible Input Options** – Upload CSV datasets or use demo data  
-✅ **Dynamic Train/Test Splitting** – Manual or automatic ratio adjustment  
-✅ **Advanced Metrics Dashboard** – Accuracy, Precision, Recall, F1, ROC-AUC  
-✅ **Performance Comparison** – See which model performs better and faster  
-✅ **Plotly Visualizations** – Clean, zoomable anomaly charts  
-✅ **Exportable Results** – Save outputs for academic or industrial use  
-✅ **Research-Ready Code** – Modular design for easy extension  
+✅ Streamlit-based interactive dashboard  
+✅ Multiple models – Prophet + Isolation Forest  
+✅ Synthetic data generator (IoT, financial, system)  
+✅ Adjustable train/test split  
+✅ Real-time Plotly visualizations  
+✅ Evaluation metrics dashboard (Accuracy, F1, ROC-AUC)  
+✅ Model profiling (time, memory, precision)  
+✅ Export results to CSV  
+✅ Modular, research-ready code  
 
 ---
 
@@ -56,12 +44,10 @@ This project aims to **simplify anomaly detection** — combining **forecasting 
 | Category | Technology |
 |-----------|-------------|
 | **Frontend / UI** | Streamlit |
-| **Machine Learning** | Scikit-learn (Isolation Forest) |
-| **Forecasting** | Prophet |
+| **ML Models** | Scikit-learn, Prophet |
 | **Data Handling** | Pandas, NumPy |
 | **Visualization** | Plotly |
 | **Language** | Python 3.10+ |
-| **Version Control** | Git & GitHub |
 
 ---
 
@@ -71,6 +57,9 @@ This project aims to **simplify anomaly detection** — combining **forecasting 
 ```bash
 git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git
 cd Time-Series-Anomaly-Detection
+
+---
+
 2️⃣ Create Virtual Environment
 bash
 Copy code
@@ -79,118 +68,133 @@ python -m venv .venv
 .venv\Scripts\activate
 # Activate (Mac/Linux)
 source .venv/bin/activate
+
+---
+
 3️⃣ Install Dependencies
 bash
 Copy code
 pip install -r requirements.txt
+
+---
+
 4️⃣ Run the Application
 bash
 Copy code
 streamlit run app.py
 Once executed, the dashboard automatically opens in your browser. 🎉
 
+---
+
 📂 Project Structure
 bash
 Copy code
 ├── app.py                  # Main Streamlit app (UI + logic)
-├── data_generator.py       # Synthetic data creation (financial, IoT, system)
+├── data_generator.py       # Synthetic data creation
 ├── anomaly_detectors.py    # Prophet & Isolation Forest models
-├── utils.py                # Helper functions (plots, evaluation, pre-processing)
-├── requirements.txt        # Dependency list
+├── utils.py                # Helper functions (plots, preprocessing)
+├── requirements.txt        # Dependencies
 ├── LICENSE                 # MIT License
-└── README.md               # Documentation (this file)
+└── README.md               # Documentation
+
+---
+
 🧮 Core Models
 🔹 Prophet
 Developed by Meta (Facebook).
-Forecasts trends and seasonality using additive models.
-Detects anomalies by comparing predicted vs. actual values.
-Ideal for business, environmental, and sensor data.
+Detects anomalies based on deviations from trend-seasonality forecasts.
+Best suited for time-dependent structured data like finance, weather, and IoT.
+
+---
 
 🔹 Isolation Forest
-Tree-based unsupervised algorithm for outlier detection.
-Identifies points that are isolated from the rest of the dataset.
-Works well on non-periodic or high-dimensional data.
+Tree-based unsupervised algorithm that isolates anomalies.
+Great for detecting irregular patterns in high-dimensional data.
+
+---
 
 📸 Demo Screenshots
-<p align="center"> <img src="images/1.png" width="45%" /> <img src="images/2.png" width="45%" /> </p>
+<p align="center"> <img src="images/1.png" width="45%"/> <img src="images/2.png" width="45%"/> </p>
+💡 Make sure your images are stored in a folder named images at the root of your repo.
+
+---
+
 🧪 Evaluation Metrics
-The app automatically calculates:
+Automatically computed:
 
 Accuracy
-
 Precision
-
 Recall
-
 F1 Score
-
 ROC-AUC
-
 Execution Time
-
 Memory Usage
 
+---
+
 🌍 Real-World Applications
-✅ Finance: Fraud and transaction anomaly detection
-✅ IoT Systems: Sensor drift and malfunction alerts
-✅ Cybersecurity: Server activity and network traffic anomalies
-✅ Healthcare: Abnormal pattern detection in vitals or wearable data
-✅ Industry 4.0: Predictive maintenance and process monitoring
+✅ Finance – Fraud or irregular transaction detection
+✅ IoT Systems – Sensor drift and device malfunction alerts
+✅ Cybersecurity – Network traffic anomaly detection
+✅ Healthcare – Abnormal pattern detection in vitals
+✅ Industry 4.0 – Predictive maintenance monitoring
+
+---
 
 🔮 Future Scope
-🚧 Planned Improvements:
+🚧 Planned Enhancements:
 
-Integration with LSTM (Deep Learning) for sequence prediction
+---
 
-Support for AutoML model selection
+Integration with LSTM-based deep learning models
+AutoML support for model selection
+Real-time streaming anomaly detection
+Cloud integration (AWS / GCP dashboards)
+PDF export for research reports
 
-Addition of real-time streaming data analysis
-
-Integration with cloud dashboards (AWS, GCP)
-
-Export PDF reports of anomaly findings for research papers
+---
 
 🤝 Contributing
 Contributions are welcome!
 
-Open an issue for bug reports or feature requests
+Open issues for bugs or suggestions
+Fork and submit pull requests
 
-Submit a pull request for improvements
+---
 
 🏅 Author & Attribution
-Developed and maintained by Dheeraj Kumar
+Developed by Dheeraj Kumar
 📍 B.S. Software Engineering, Iqra University (Class of 2025)
 🎓 Focus Areas: AI • Machine Learning • Data Analysis • Research Systems
 
-If you use this repository, please credit the author by citing or linking back.
+If you use this project, please credit by linking back to this repository.
 Licensed under the MIT License.
 
+---
+
 💬 About the Developer
-I’m Dheeraj Kumar — a Software Engineering graduate passionate about AI, ML, and research-driven software systems.
-This project represents my goal to merge academic learning with real-world AI applications — creating tools that are not just smart, but understandable and usable.
+Hi, I’m Dheeraj Kumar — passionate about AI, ML, and data-driven software.
+This project combines my love for research and development, making AI more accessible and visual.
+
+---
 
 📫 Contact:
 
 LinkedIn
-
+https://www.linkedin.com/in/dheeraj-kumar-b21a741a2/
 GitHub
-
 📧 dheerajkumar47@gmail.com
 
+---
+
 🙏 Acknowledgements
-Special thanks to the developers and communities behind:
+Special thanks to the open-source communities behind:
 
 Streamlit
-
 Prophet
-
 Scikit-learn
-
 Plotly
 
-⭐ If you find this project helpful, please give it a star on GitHub — it motivates and supports future open-source research!
-
-yaml
-Copy code
+⭐ If you like this project, please give it a star on GitHub — it helps support future open-source research!
 
 ---
