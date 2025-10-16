@@ -57,38 +57,29 @@ Built for **researchers, students, and engineers** exploring anomaly detection i
 ```bash
 git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git
 cd Time-Series-Anomaly-Detection
-
----
-
+```
 2️⃣ Create Virtual Environment
-bash
-Copy code
+```
+
 python -m venv .venv
 # Activate (Windows)
+
 .venv\Scripts\activate
 # Activate (Mac/Linux)
+
 source .venv/bin/activate
-
----
-
+```
 3️⃣ Install Dependencies
-bash
-Copy code
+```
 pip install -r requirements.txt
-
----
-
+```
 4️⃣ Run the Application
-bash
-Copy code
+```
 streamlit run app.py
-Once executed, the dashboard automatically opens in your browser. 🎉
-
----
-
-📂 Project Structure
-bash
-Copy code
+```
+Once executed, the dashboard automatically opens in your browser. 🎉```
+## Roadmap
+```
 ├── app.py                  # Main Streamlit app (UI + logic)
 ├── data_generator.py       # Synthetic data creation
 ├── anomaly_detectors.py    # Prophet & Isolation Forest models
@@ -97,24 +88,27 @@ Copy code
 ├── LICENSE                 # MIT License
 └── README.md               # Documentation
 
----
+```
+## Documentation
 
 🧮 Core Models
+
 🔹 Prophet
+```
 Developed by Meta (Facebook).
 Detects anomalies based on deviations from trend-seasonality forecasts.
 Best suited for time-dependent structured data like finance, weather, and IoT.
-
----
-
+```
 🔹 Isolation Forest
+```
 Tree-based unsupervised algorithm that isolates anomalies.
 Great for detecting irregular patterns in high-dimensional data.
 
----
 
-📸 Demo Screenshots
-<p align="center"> <img src="images/1.png" width="45%"/> <img src="images/2.png" width="45%"/> </p>
+## Screenshots
+
+![App Screenshot]<img src="images/1.png" width="45%"/>
+
 💡 Make sure your images are stored in a folder named images at the root of your repo.
 
 ---
