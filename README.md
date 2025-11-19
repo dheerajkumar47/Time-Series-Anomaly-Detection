@@ -1,194 +1,153 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 ![Author: Dheeraj Kumar](https://img.shields.io/badge/Author-Dheeraj_Kumar-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
-![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red.svg)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg)
+![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)
 ![Machine Learning](https://img.shields.io/badge/ML-Isolation%20Forest-orange.svg)
 ![Forecasting](https://img.shields.io/badge/Forecasting-Prophet-yellow.svg)
 ![Status](https://img.shields.io/badge/Project_Status-Active-brightgreen.svg)
-![Platform](https://img.shields.io/badge/Platform-Web_App-blueviolet.svg)
 
 ---
 
-# 📊 Time-Series Anomaly Detection System  
-### _An Interactive, Explainable, and Research-Ready Dashboard for Detecting Anomalies in Time-Series Data_
+# 📊 Time-Series Anomaly Detection System
+### _An Interactive, Scalable, and Explainable AI System for Detecting Anomalies in Time-Series Data_
 
 ---
 
-## 🧠 Overview  
-This project is a **Streamlit-based AI system** designed to **detect anomalies in time-series datasets** using **Prophet (forecasting)** and **Isolation Forest (machine learning)**.  
+## 🧠 Overview
+This project is a modern, **decoupled AI system** designed to **detect anomalies in time-series datasets** with high precision. It features a robust **FastAPI backend** for data processing and model training, paired with an interactive **Streamlit frontend** for visualization and control.
 
-It provides a **no-code web dashboard** where users can:  
-- Upload or generate datasets  
-- Train and compare models  
-- Visualize anomalies interactively  
-- Export performance reports  
+Leveraging **Prophet (Meta)** for trend forecasting and **Isolation Forest** for unsupervised anomaly detection, this tool is built for **researchers, data scientists, and engineers** working in **finance, IoT, and system monitoring**.
 
-Built for **researchers, students, and engineers** exploring anomaly detection in **finance, IoT, and system monitoring**.  
-
----
-
-## ✨ Key Features  
-✅ Streamlit-based interactive dashboard  
-✅ Multiple models – Prophet + Isolation Forest  
-✅ Synthetic data generator (IoT, financial, system)  
-✅ Adjustable train/test split  
-✅ Real-time Plotly visualizations  
-✅ Evaluation metrics dashboard (Accuracy, F1, ROC-AUC)  
-✅ Model profiling (time, memory, precision)  
-✅ Export results to CSV  
-✅ Modular, research-ready code  
+### 🌟 Why This Project?
+- **Decoupled Architecture**: Scalable backend API separated from the UI.
+- **Explainable AI**: Visualizes *why* a point is anomalous (deviation vs. isolation).
+- **Research-Ready**: Includes performance metrics (F1-Score, AUC-ROC) and resource profiling.
 
 ---
 
-## 🧩 Tech Stack  
-| Category | Technology |
-|-----------|-------------|
-| **Frontend / UI** | Streamlit |
-| **ML Models** | Scikit-learn, Prophet |
-| **Data Handling** | Pandas, NumPy |
-| **Visualization** | Plotly |
-| **Language** | Python 3.10+ |
+## ✨ Key Features
+✅ **Dual-Model Engine**: Combines Prophet (Seasonality/Trend) and Isolation Forest (Outlier Detection).
+✅ **FastAPI Backend**: RESTful API for data generation, training, and inference.
+✅ **Interactive Dashboard**: Real-time Plotly charts for time-series and anomaly scores.
+✅ **Synthetic Data Generator**: Create realistic datasets for Finance, Server Metrics, and IoT Sensors.
+✅ **Performance Metrics**: Auto-calculated Precision, Recall, F1-Score, and Accuracy.
+✅ **Resource Profiling**: Track training time, memory usage, and throughput.
+✅ **Export Capabilities**: Download predictions and reports as CSV.
 
 ---
 
-## 🚀 Getting Started  
+## 🧩 Tech Stack
 
-### 1️⃣ Clone the Repository  
+| Component | Technology | Description |
+|-----------|------------|-------------|
+| **Backend** | **FastAPI** | High-performance API for ML logic |
+| **Frontend** | **Streamlit** | Interactive web dashboard |
+| **ML Models** | **Prophet**, **Scikit-learn** | Forecasting & Anomaly Detection |
+| **Data Processing** | **Pandas**, **NumPy** | Data manipulation & vectorization |
+| **Visualization** | **Plotly** | Interactive charts |
+| **Validation** | **Pydantic** | Data validation & schema management |
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/dheerajkumar47/Time-Series-Anomaly-Detection.git
 cd Time-Series-Anomaly-Detection
 ```
-2️⃣ Create Virtual Environment
-```
 
+### 2️⃣ Create Virtual Environment
+```bash
 python -m venv .venv
 # Activate (Windows)
-
 .venv\Scripts\activate
 # Activate (Mac/Linux)
-
 source .venv/bin/activate
 ```
-3️⃣ Install Dependencies
-```
+
+### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
 ```
-4️⃣ Run the Application
+
+### 4️⃣ Run the Application
+You need to run the **Backend** and **Frontend** in separate terminals.
+
+#### Terminal 1: Start Backend API
+```bash
+uvicorn backend.main:app --reload --port 8000
 ```
+*API Docs available at: http://localhost:8000/docs*
+
+#### Terminal 2: Start Frontend UI
+```bash
 streamlit run app.py
 ```
-Once executed, the dashboard automatically opens in your browser. 🎉```
-## Roadmap
+*Dashboard opens at: http://localhost:8501*
+
+---
+
+## 📂 Project Structure
 ```
-├── app.py                  # Main Streamlit app (UI + logic)
-├── data_generator.py       # Synthetic data creation
-├── anomaly_detectors.py    # Prophet & Isolation Forest models
-├── utils.py                # Helper functions (plots, preprocessing)
+├── backend/                # FastAPI Backend
+│   ├── core/               # Core ML & Data Logic
+│   │   ├── anomaly_detectors.py
+│   │   ├── data_generator.py
+│   │   └── utils.py
+│   ├── main.py             # API Entry Point
+│   └── schemas.py          # Pydantic Models
+├── app.py                  # Streamlit Frontend
+├── frontend_utils.py       # UI Helper Functions
 ├── requirements.txt        # Dependencies
-├── LICENSE                 # MIT License
 └── README.md               # Documentation
-
 ```
-## Documentation
-
-🧮 Core Models
-
-🔹 Prophet
-```
-Developed by Meta (Facebook).
-Detects anomalies based on deviations from trend-seasonality forecasts.
-Best suited for time-dependent structured data like finance, weather, and IoT.
-```
-🔹 Isolation Forest
-```
-Tree-based unsupervised algorithm that isolates anomalies.
-Great for detecting irregular patterns in high-dimensional data.
-
-
-## Screenshots
-
-![App Screenshot]<img src="images/1.png" width="45%"/>
-
-💡 Make sure your images are stored in a folder named images at the root of your repo.
 
 ---
 
-🧪 Evaluation Metrics
-Automatically computed:
+## 🧮 Core Models
 
-Accuracy
-Precision
-Recall
-F1 Score
-ROC-AUC
-Execution Time
-Memory Usage
+### 🔹 Prophet (Meta)
+- **Type**: Forecasting / Regression
+- **Use Case**: Detects anomalies by checking if values fall outside the predicted confidence interval.
+- **Best For**: Data with strong seasonal patterns (e.g., daily sales, server traffic).
 
----
-
-🌍 Real-World Applications
-✅ Finance – Fraud or irregular transaction detection
-✅ IoT Systems – Sensor drift and device malfunction alerts
-✅ Cybersecurity – Network traffic anomaly detection
-✅ Healthcare – Abnormal pattern detection in vitals
-✅ Industry 4.0 – Predictive maintenance monitoring
+### 🔹 Isolation Forest
+- **Type**: Unsupervised Learning
+- **Use Case**: Isolates anomalies by randomly partitioning data points. Outliers require fewer partitions.
+- **Best For**: High-dimensional data or irregular anomalies (e.g., fraud detection).
 
 ---
 
-🔮 Future Scope
-🚧 Planned Enhancements:
+## 🌍 Real-World Applications
+- **💰 Finance**: Fraud detection in credit card transactions.
+- **📡 IoT**: Identifying sensor malfunctions or drift.
+- **🖥️ DevOps**: Monitoring server CPU/Memory spikes.
+- **🏥 Healthcare**: Detecting irregularities in patient vitals.
 
 ---
 
-Integration with LSTM-based deep learning models
-AutoML support for model selection
-Real-time streaming anomaly detection
-Cloud integration (AWS / GCP dashboards)
-PDF export for research reports
+## 🔮 Future Scope
+- [ ] **Deep Learning**: Integration with LSTM/Autoencoders.
+- [ ] **AutoML**: Automatic model selection and hyperparameter tuning.
+- [ ] **Streaming**: Real-time data ingestion via Kafka/WebSocket.
+- [ ] **Deployment**: Docker containerization and Cloud deployment (AWS/GCP).
 
 ---
 
-🤝 Contributing
-Contributions are welcome!
-
-Open issues for bugs or suggestions
-Fork and submit pull requests
+## 🤝 Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
+For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
-🏅 Author & Attribution
-Developed by Dheeraj Kumar
-📍 B.S. Software Engineering, Iqra University (Class of 2025)
-🎓 Focus Areas: AI • Machine Learning • Data Analysis • Research Systems
-
-If you use this project, please credit by linking back to this repository.
-Licensed under the MIT License.
+## 🏅 Author
+**Dheeraj Kumar**
+- 📍 B.S. Software Engineering, Iqra University (Class of 2025)
+- 📧 [dheerajkumar47@gmail.com](mailto:dheerajkumar47@gmail.com)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/dheeraj-kumar-b21a741a2/) | [GitHub](https://github.com/dheerajkumar47)
 
 ---
 
-💬 About the Developer
-Hi, I’m Dheeraj Kumar — passionate about AI, ML, and data-driven software.
-This project combines my love for research and development, making AI more accessible and visual.
-
----
-
-📫 Contact:
-
-LinkedIn
-https://www.linkedin.com/in/dheeraj-kumar-b21a741a2/
-GitHub
-📧 dheerajkumar47@gmail.com
-
----
-
-🙏 Acknowledgements
-Special thanks to the open-source communities behind:
-
-Streamlit
-Prophet
-Scikit-learn
-Plotly
-
-⭐ If you like this project, please give it a star on GitHub — it helps support future open-source research!
-
----
+_If you find this project useful, please give it a ⭐ on GitHub!_
