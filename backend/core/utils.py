@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import streamlit as st
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class DataPreprocessor:
@@ -23,14 +25,12 @@ class DataPreprocessor:
 
             # Validate and rename timestamp column
             if timestamp_col not in df.columns:
-                st.error(f"❌ Error: Column '{timestamp_col}' not found in the dataset.")
-                return None
+                raise ValueError(f"Column '{timestamp_col}' not found in the dataset.")
             df.rename(columns={timestamp_col: "timestamp"}, inplace=True)
 
             # Validate and rename value column
             if value_col not in df.columns:
-                st.error(f"❌ Error: Column '{value_col}' not found in the dataset.")
-                return None
+                raise ValueError(f"Column '{value_col}' not found in the dataset.")
             df.rename(columns={value_col: "value"}, inplace=True)
 
             # Validate and rename anomaly column (optional)
@@ -40,24 +40,19 @@ class DataPreprocessor:
                     df["is_anomaly"] = df["is_anomaly"].astype(int)
             else:
                 df["is_anomaly"] = 0
-                st.warning(
-                    f"⚠️ No anomaly column '{anomaly_col}' found. Assuming all data points are normal."
-                )
+                logger.warning(f"No anomaly column '{anomaly_col}' found. Assuming all data points are normal.")
 
                 # Optional: inject synthetic anomalies if dataset has none
                 if df["is_anomaly"].sum() == 0 and len(df) > 100:
                     anomaly_idx = df.sample(frac=0.01, random_state=42).index
                     df.loc[anomaly_idx, "is_anomaly"] = 1
-                    st.info("🔄 Synthetic anomalies injected (1% of dataset).")
+                    logger.info("Synthetic anomalies injected (1% of dataset).")
 
             # Convert timestamp column
             try:
                 if timestamp_unit in ["Seconds", "Milliseconds"]:
                     if not pd.api.types.is_numeric_dtype(df["timestamp"]):
-                        st.error(
-                            f"❌ 'timestamp' column is not numeric but unit '{timestamp_unit}' is selected. Use 'String' instead."
-                        )
-                        return None
+                        raise ValueError(f"'timestamp' column is not numeric but unit '{timestamp_unit}' is selected. Use 'String' instead.")
 
                     pd_unit = "s" if timestamp_unit == "Seconds" else "ms"
                     df["timestamp"] = pd.to_datetime(
@@ -67,42 +62,36 @@ class DataPreprocessor:
                     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", utc=True)
 
             except Exception as e:
-                st.error(f"❌ Timestamp conversion failed: {str(e)}. Check column values/unit.")
-                return None
+                raise ValueError(f"Timestamp conversion failed: {str(e)}. Check column values/unit.")
 
             # Verify timestamp conversion
             if not pd.api.types.is_datetime64_any_dtype(df["timestamp"]):
-                st.error("❌ 'timestamp' column is not datetime-like. Ensure valid date format.")
-                return None
+                raise ValueError("'timestamp' column is not datetime-like. Ensure valid date format.")
 
             # Strip timezone if present
             if df["timestamp"].dt.tz is not None:
                 df["timestamp"] = df["timestamp"].dt.tz_convert("UTC").dt.tz_localize(None)
-                st.warning("🔄 Timezone-aware timestamps converted to UTC and stripped.")
+                logger.warning("Timezone-aware timestamps converted to UTC and stripped.")
 
             # Sort data
             df = df.sort_values("timestamp").reset_index(drop=True)
 
             # Check missing values
             if df["timestamp"].isnull().any():
-                st.error("❌ Missing values detected in 'timestamp' column.")
-                return None
+                raise ValueError("Missing values detected in 'timestamp' column.")
             if df["value"].isnull().any():
-                st.error("❌ Missing values detected in 'value' column.")
-                return None
+                raise ValueError("Missing values detected in 'value' column.")
 
             # Downsample very large datasets
             if len(df) > max_points:
-                st.warning(
-                    f"⚠️ Dataset too large ({len(df)} rows). Using first {max_points} points for training."
-                )
+                logger.warning(f"Dataset too large ({len(df)} rows). Using first {max_points} points for training.")
                 df = df.head(max_points).copy()
 
             return df
 
         except Exception as e:
-            st.error(f"❌ General data error: {str(e)}")
-            return None
+            # Re-raise as ValueError for cleaner handling upstream
+            raise ValueError(f"General data error: {str(e)}")
 
     @staticmethod
     def split_train_test(df, test_size=0.3):
