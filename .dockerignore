@@ -1,0 +1,20 @@
+# Ignore virtual environment
+.venv
+venv
+env
+
+# Ignore git history
+.git
+.gitignore
+
+# Ignore Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore VS Code settings
+.vscode
+
+# Ignore local data/models if any (optional, depending on if you want them baked in)
+# For now, we keep them, but usually we mount them as volumes.

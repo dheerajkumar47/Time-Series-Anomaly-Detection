@@ -66,32 +66,6 @@ python -m venv .venv
 # Activate (Mac/Linux)
 source .venv/bin/activate
 ```
-
-### 3️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4️⃣ Run the Application
-You need to run the **Backend** and **Frontend** in separate terminals.
-
-#### Terminal 1: Start Backend API
-```bash
-uvicorn backend.main:app --reload --port 8000
-```
-*API Docs available at: http://localhost:8000/docs*
-
-#### Terminal 2: Start Frontend UI
-```bash
-streamlit run app.py
-```
-*Dashboard opens at: http://localhost:8501*
-
----
-
-## 📂 Project Structure
-```
-├── backend/                # FastAPI Backend
 │   ├── core/               # Core ML & Data Logic
 │   │   ├── anomaly_detectors.py
 │   │   ├── data_generator.py
